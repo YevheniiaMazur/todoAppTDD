@@ -35,6 +35,7 @@ export class AppComponent {
 
   filterActiveTodo(): void {
     const activeTodo: Todo[] = [];
+    this.filterTodo = [];
     this.todoStore.todos.forEach(item => {
       if (!item.completed) {
         activeTodo.push(item);
@@ -43,15 +44,16 @@ export class AppComponent {
     this.filterTodo = activeTodo;
   }
 
-  filterComplitedTodo(): void {
-    const complitedTodo: Todo[] = [];
+  filterCompletedTodo(): void {
+    const completedTodo: Todo[] = [];
+    this.filterTodo = [];
     this.todoStore.todos.forEach(item => {
       if (item.completed) {
-        complitedTodo.push(item);
+        completedTodo.push(item);
       }
 
     });
-    this.filterTodo = complitedTodo;
+    this.filterTodo = completedTodo;
   }
 
   filterAllTodo(): void {

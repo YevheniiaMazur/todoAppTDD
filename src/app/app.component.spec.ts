@@ -86,7 +86,7 @@ describe('AppComponent', () => {
     ];
 
     app.todoStore.todos[0].completed = true;
-    app.filterComplitedTodo();
+    app.filterCompletedTodo();
 
     expect(app.filterTodo).toContain(app.todoStore.todos[0]);
   });
@@ -96,7 +96,7 @@ describe('AppComponent', () => {
       new Todo('todo')
     ];
 
-    app.filterComplitedTodo();
+    app.filterCompletedTodo();
 
     expect(app.filterTodo).not.toContain(app.todoStore.todos[0]);
   });
