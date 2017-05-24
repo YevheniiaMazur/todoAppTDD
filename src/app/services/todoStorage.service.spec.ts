@@ -28,7 +28,9 @@ describe('Check TodoStorage service', () => {
   }));
 
   it('check service remove todo', inject([TodoStorage], (storage: TodoStorage) => {
-    storage.todos = [{title: 'todo1', completed: false}, {title: 'todo2', completed: true}]
+    storage.todos = [
+      {title: 'todo1', completed: false},
+      {title: 'todo2', completed: true}]
     arrLengtStart = storage.todos.length;
     const todo: Todo = storage.todos[0];
 

@@ -27,6 +27,7 @@ export class AppComponent {
 
   removeTodo(todo: Todo): void {
     this.todoStore.remove(todo);
+    this.filterTodo = this.todoStore.todos;
   }
 
   changeTodoStatus(todo: Todo): void {
