@@ -1,7 +1,7 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { Todo } from './models/todo.model';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -10,12 +10,8 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-      imports: [
-        FormsModule
-      ]
+      declarations: [AppComponent],
+      imports: [FormsModule]
     });
 
     fixture = TestBed.createComponent(AppComponent);
