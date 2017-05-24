@@ -1,4 +1,4 @@
-import {Todo} from '../models/todo.model';
+import { Todo } from '../models/todo.model';
 
 export class TodoStorage {
   todos = [
@@ -10,12 +10,6 @@ export class TodoStorage {
   }
 
   remove(todo: Todo): void {
-    const todoInd = this.todos.indexOf(todo);
-    this.todos = this.todos.filter((item , i) => {
-      if (i !== todoInd ) {
-
-        return todo;
-      }
-    });
+    this.todos = this.todos.filter(item  => item !== todo );
   }
 }

@@ -10,10 +10,10 @@ import { Todo } from './models/todo.model';
 export class AppComponent {
   todoStore: TodoStorage = new TodoStorage();
   newTodoTitle: String = '';
-  filterTodo: Todo[];
+  filterArray: Todo[];
 
   constructor() {
-    this.filterAllTodo();
+     this.filterTodo('ALL');
   }
 
   addTodo(todoFormAdd): void {
@@ -27,37 +27,41 @@ export class AppComponent {
 
   removeTodo(todo: Todo): void {
     this.todoStore.remove(todo);
-    this.filterTodo = this.todoStore.todos;
+    this.filterArray = this.todoStore.todos;
   }
 
   changeTodoStatus(todo: Todo): void {
     todo.completed = !todo.completed;
   }
 
-  filterActiveTodo(): void {
+ filterTodo(filterName: string) {
     const activeTodo: Todo[] = [];
-    this.filterTodo = [];
-    this.todoStore.todos.forEach(item => {
+    const completedTodo: Todo[] = [];
+    const allTodo: Todo[] = this.todoStore.todos;
+
+    allTodo.forEach(item => {
       if (!item.completed) {
         activeTodo.push(item);
-      }
-    });
-    this.filterTodo = activeTodo;
-  }
-
-  filterCompletedTodo(): void {
-    const completedTodo: Todo[] = [];
-    this.filterTodo = [];
-    this.todoStore.todos.forEach(item => {
-      if (item.completed) {
+      } else {
         completedTodo.push(item);
       }
-
     });
-    this.filterTodo = completedTodo;
-  }
 
-  filterAllTodo(): void {
-    this.filterTodo = this.todoStore.todos;
+    switch (filterName) {
+      case 'ALL':
+        this.filterArray = allTodo;
+        break;
+
+      case 'COMPLETED':
+        this.filterArray = completedTodo;
+        break;
+
+      case 'ACTIVE':
+        this.filterArray = activeTodo;
+        break;
+
+      default:
+        break;
+    }
   }
 }

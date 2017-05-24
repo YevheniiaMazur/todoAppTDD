@@ -4,9 +4,9 @@
     <input class="new-todo" placeholder="Enter title of your todo" name="todo" autofocus ngModel>
   </form>
 </header>
-<section class="main" *ngIf="filterTodo.length > 0">
+<section class="main" *ngIf="filterArray.length > 0">
   <ul class="todo-list">
-    <li *ngFor="let todo of filterTodo">
+    <li *ngFor="let todo of filterArray">
       <input class="toggle" type="checkbox" (click)="changeTodoStatus(todo)" [checked]="todo.completed">
       {{todo.title}}
       <button class="destroy" (click)="removeTodo(todo)">X</button>
@@ -14,7 +14,7 @@
   </ul>
 </section>
 <section class="filters">
-  <button (click)="filterAllTodo()">Show All Todos</button>
-  <button (click)="filterCompletedTodo()">Show Completed Todos</button>
-  <button (click)="filterActiveTodo()">Show Active Todos</button>
+  <button (click)="filterTodo('ALL')">Show All Todos</button>
+  <button (click)="filterTodo('COMPLETED')">Show Completed Todos</button>
+  <button (click)="filterTodo('ACTIVE')">Show Active Todos</button>
 </section>

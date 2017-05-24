@@ -61,41 +61,41 @@ describe('AppComponent', () => {
   it('check filter active with active todo', () => {
     app.todoStore.todos = [ todo ];
 
-    app.filterActiveTodo();
+    app.filterTodo('ACTIVE');
 
-    expect(app.filterTodo).toContain(app.todoStore.todos[0]);
+    expect(app.filterArray).toContain(app.todoStore.todos[0]);
   });
 
   it('check filter active with completed todo', () => {
     app.todoStore.todos = [ todo ];
     app.todoStore.todos[0].completed = true;
 
-    app.filterActiveTodo();
+    app.filterTodo('ACTIVE');
 
-    expect(app.filterTodo).not.toContain(app.todoStore.todos[0]);
+    expect(app.filterArray).not.toContain(app.todoStore.todos[0]);
   });
 
   it('check filter completed with completed todo', () => {
     app.todoStore.todos = [ todo ];
     app.todoStore.todos[0].completed = true;
 
-    app.filterCompletedTodo();
+    app.filterTodo('COMPLETED');
 
-    expect(app.filterTodo).toContain(app.todoStore.todos[0]);
+    expect(app.filterArray).toContain(app.todoStore.todos[0]);
   });
 
   it('check filter completed with active todo', () => {
     app.todoStore.todos = [ todo ];
 
-    app.filterCompletedTodo();
+    app.filterTodo('COMPLITED');
 
-    expect(app.filterTodo).not.toContain(app.todoStore.todos[0]);
+    expect(app.filterArray).not.toContain(app.todoStore.todos[0]);
   });
 
   it('check filter all', () => {
 
-    app.filterAllTodo();
+    app.filterTodo('ALL');
 
-    expect(app.filterTodo).toEqual(app.todoStore.todos);
+    expect(app.filterArray).toEqual(app.todoStore.todos);
   });
 });
