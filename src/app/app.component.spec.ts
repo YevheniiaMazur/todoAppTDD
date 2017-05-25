@@ -51,15 +51,8 @@ describe('AppComponent', () => {
     expect(app.todoStore.remove).toHaveBeenCalledWith(todo);
   });
 
-  it('check change todo status', () => {
-
-    app.changeTodoStatus(todo);
-
-    expect(todo.completed).toBeTruthy();
-  });
-
   it('check filter active with active todo', () => {
-    app.todoStore.todos = [ todo ];
+    app.todoStore.todos = [todo];
 
     app.filterTodo('ACTIVE');
 
@@ -67,7 +60,7 @@ describe('AppComponent', () => {
   });
 
   it('check filter active with completed todo', () => {
-    app.todoStore.todos = [ todo ];
+    app.todoStore.todos = [todo];
     app.todoStore.todos[0].completed = true;
 
     app.filterTodo('ACTIVE');
@@ -76,7 +69,7 @@ describe('AppComponent', () => {
   });
 
   it('check filter completed with completed todo', () => {
-    app.todoStore.todos = [ todo ];
+    app.todoStore.todos = [todo];
     app.todoStore.todos[0].completed = true;
 
     app.filterTodo('COMPLETED');
@@ -85,7 +78,7 @@ describe('AppComponent', () => {
   });
 
   it('check filter completed with active todo', () => {
-    app.todoStore.todos = [ todo ];
+    app.todoStore.todos = [todo];
 
     app.filterTodo('COMPLITED');
 

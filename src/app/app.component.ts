@@ -13,7 +13,7 @@ export class AppComponent {
   filterArray: Todo[];
 
   constructor() {
-     this.filterTodo('ALL');
+    this.filterTodo('ALL');
   }
 
   addTodo(todoFormAdd): void {
@@ -30,11 +30,7 @@ export class AppComponent {
     this.filterArray = this.todoStore.todos;
   }
 
-  changeTodoStatus(todo: Todo): void {
-    todo.completed = !todo.completed;
-  }
-
- filterTodo(filterName: string) {
+  filterTodo(filterName: string) {
     const activeTodo: Todo[] = [];
     const completedTodo: Todo[] = [];
     const allTodo: Todo[] = this.todoStore.todos;
