@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { TodoStorage } from './services/todoStorage.service';
 import { Todo } from './models/todo.model';
 
@@ -31,29 +32,17 @@ export class AppComponent {
   }
 
   filterTodo(filterName: string) {
-    const activeTodo: Todo[] = [];
-    const completedTodo: Todo[] = [];
-    const allTodo: Todo[] = this.todoStore.todos;
-
-    allTodo.forEach(item => {
-      if (!item.completed) {
-        activeTodo.push(item);
-      } else {
-        completedTodo.push(item);
-      }
-    });
-
     switch (filterName) {
       case 'ALL':
-        this.filterArray = allTodo;
+        this.filterArray = this.todoStore.todos;
         break;
 
       case 'COMPLETED':
-        this.filterArray = completedTodo;
+        this.filterArray = this.todoStore.todos.filter(item => item.completed === true);
         break;
 
       case 'ACTIVE':
-        this.filterArray = activeTodo;
+        this.filterArray = this.todoStore.todos.filter(item => item.completed === false);
         break;
 
       default:

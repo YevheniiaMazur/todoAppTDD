@@ -1,9 +1,10 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { Todo } from './models/todo.model';
 import { FormsModule } from '@angular/forms';
 
-describe('AppComponent', () => {
+import { AppComponent } from './app.component';
+import { Todo } from './models/todo.model';
+
+describe('Check AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let app: AppComponent;
   let todo: Todo;
@@ -22,13 +23,13 @@ describe('AppComponent', () => {
   it('check add todo with title', () => {
     spyOn(app.todoStore, 'add');
     const todoFormAdd = {
-      value: {todo: 'todoName'},
+      value: {todo: 'todoTitle'},
       reset: res => res
     };
 
     app.addTodo(todoFormAdd);
 
-    expect(app.todoStore.add).toHaveBeenCalledWith('todoName');
+    expect(app.todoStore.add).toHaveBeenCalledWith('todoTitle');
     expect(app.newTodoTitle).toEqual('');
   });
 
@@ -86,7 +87,6 @@ describe('AppComponent', () => {
   });
 
   it('check filter all', () => {
-
     app.filterTodo('ALL');
 
     expect(app.filterArray).toEqual(app.todoStore.todos);
