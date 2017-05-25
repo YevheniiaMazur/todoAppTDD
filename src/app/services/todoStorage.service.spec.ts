@@ -1,32 +1,51 @@
-import { TestBed, async, inject } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+
 import { TodoStorage } from './todoStorage.service';
 import { Todo } from '../models/todo.model';
 
 describe('Check TodoStorage service', () => {
-  beforeEach(async(() => {
+  let arrLengthStart: number;
+  let arrLengthEnd: number;
+  let storage: TodoStorage;
+
+  beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [TodoStorage]
-    }).compileComponents();
-  }));
+    });
 
-  it('should create an instance todoStorage', inject([TodoStorage], (service: TodoStorage) => {
+    storage = TestBed.get(TodoStorage);
+  });
 
-    expect(service).toBeTruthy();
-  }));
+  it('check service add todo', () => {
+    arrLengthStart = storage.todos.length;
 
-  it('check service add todo', inject([TodoStorage], (storage: TodoStorage) => {
-
-    spyOn(storage.todos, 'push');
     storage.add('testTodo');
+    arrLengthEnd = storage.todos.length;
 
-    expect(storage.todos.push).toHaveBeenCalledWith(new Todo('testTodo'));
-  }));
+    expect(storage.todos[arrLengthEnd - 1].title).toEqual('testTodo');
+    expect(arrLengthEnd).toEqual(arrLengthStart + 1);
+  });
 
-  it('check service remove todo', inject([TodoStorage], (storage: TodoStorage) => {
+  it('check service remove todo', () => {
+    storage.todos = [
+      {title: 'todo1', completed: false},
+      {title: 'todo2', completed: true}
+    ];
+    arrLengthStart = storage.todos.length;
+    const todo: Todo = storage.todos[0];
 
-    spyOn(storage.todos, 'splice');
     storage.remove(storage.todos[0]);
+    arrLengthEnd = storage.todos.length;
 
-    expect(storage.todos.splice).toHaveBeenCalledWith(0, 1);
-  }));
+    expect(storage.todos).not.toContain(todo);
+    expect(arrLengthEnd).toEqual(arrLengthStart - 1);
+  });
+
+  it('check change todo status', () => {
+    const todo: Todo = new Todo('newTodo');
+
+    storage.changeTodoStatus(todo);
+
+    expect(todo.completed).toBeTruthy();
+  });
 });

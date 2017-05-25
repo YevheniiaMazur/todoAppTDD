@@ -1,37 +1,94 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { Todo } from './models/todo.model';
 
-fdescribe('AppComponent', () => {
+describe('Check AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let app: AppComponent;
+  let todo: Todo;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ]
-    }).compileComponents();
+      declarations: [AppComponent],
+      imports: [FormsModule]
+    });
 
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.debugElement.componentInstance;
-  }));
+    todo = new Todo('todoName');
+  });
 
-  it('should create the app', async(() => {
+  it('check add todo with title', () => {
+    spyOn(app.todoStore, 'add');
+    const todoFormAdd = {
+      value: {todo: 'todoTitle'},
+      reset: res => res
+    };
 
-    expect(app).toBeTruthy();
-  }));
+    app.addTodo(todoFormAdd);
 
-  // it(`should have as title 'app works!'`, async(() => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   expect(app.title).toEqual('app works!');
-  // }));
-  //
-  // it('should render title in a h1 tag', async(() => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('h1').textContent).toContain('app works!');
-  // }));
+    expect(app.todoStore.add).toHaveBeenCalledWith('todoTitle');
+    expect(app.newTodoTitle).toEqual('');
+  });
+
+  it('check add todo without title', () => {
+    spyOn(app.todoStore, 'add');
+    const todoFormAdd = {
+      value: {todo: ''}
+    };
+
+    app.addTodo(todoFormAdd);
+
+    expect(app.todoStore.add).not.toHaveBeenCalled();
+  });
+
+  it('check remove todo', () => {
+    spyOn(app.todoStore, 'remove');
+
+    app.removeTodo(todo);
+
+    expect(app.todoStore.remove).toHaveBeenCalledWith(todo);
+  });
+
+  it('check filter active with active todo', () => {
+    app.todoStore.todos = [todo];
+
+    app.filterTodo('ACTIVE');
+
+    expect(app.filterArray).toContain(app.todoStore.todos[0]);
+  });
+
+  it('check filter active with completed todo', () => {
+    app.todoStore.todos = [todo];
+    app.todoStore.todos[0].completed = true;
+
+    app.filterTodo('ACTIVE');
+
+    expect(app.filterArray).not.toContain(app.todoStore.todos[0]);
+  });
+
+  it('check filter completed with completed todo', () => {
+    app.todoStore.todos = [todo];
+    app.todoStore.todos[0].completed = true;
+
+    app.filterTodo('COMPLETED');
+
+    expect(app.filterArray).toContain(app.todoStore.todos[0]);
+  });
+
+  it('check filter completed with active todo', () => {
+    app.todoStore.todos = [todo];
+
+    app.filterTodo('COMPLITED');
+
+    expect(app.filterArray).not.toContain(app.todoStore.todos[0]);
+  });
+
+  it('check filter all', () => {
+    app.filterTodo('ALL');
+
+    expect(app.filterArray).toEqual(app.todoStore.todos);
+  });
 });
