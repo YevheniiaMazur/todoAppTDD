@@ -1,0 +1,142 @@
+20171003 155048.049 [6142] Sauce Connect 4.4.9, build 3688 098cbcf -dirty
+20171003 155048.049 [6142] Using CA certificate bundle /etc/ssl/certs/ca-certificates.crt.
+20171003 155048.049 [6142] Using CA certificate verify path /etc/ssl/certs.
+20171003 155048.049 [6142] Trying to autodetect proxy settings
+20171003 155048.049 [6142] Starting up; pid 6142
+20171003 155048.049 [6142] Command line arguments: /home/vs/projects/todoAppTDD/node_modules/sauce-connect-launcher/sc/sc-4.4.9-linux/bin/sc -P 5757 --logfile sauce_connect.log -u YevheniiaMazur -k **** --tunnel-identifier karma1507034802 --readyfile /tmp/sc-launcher-readyfile 
+20171003 155048.049 [6142] Log file: sauce_connect.log
+20171003 155048.049 [6142] Pid file: /tmp/sc_client-karma1507034802.pid
+20171003 155048.049 [6142] Timezone: EEST GMT offset: 3h
+20171003 155048.049 [6142] Using no proxy for connecting to Sauce Labs REST API.
+20171003 155048.049 [6142] Unable to serve metrics on localhost:8888, error was: listen tcp 127.0.0.1:8888: bind: address already in use
+20171003 155049.068 [6142] PROXY *** scproxy started ***
+20171003 155049.069 [6142] PROXY found DNS server 127.0.1.1
+20171003 155049.069 [6142] PROXY found DNS server 8.8.8.8
+20171003 155049.069 [6142] PROXY found DNS server 8.8.4.4
+20171003 155049.118 [6142] Started scproxy on port 36777.
+20171003 155049.118 [6142] Please wait for 'you may start your tests' to start your tests.
+20171003 155107.121 [6142] Provisioned tunnel:5d7d322fe5bf4d08b0b94af91a1cacb8
+20171003 155107.121 [6142] Using no proxy for connecting to tunnel VM.
+20171003 155107.121 [6142] Starting Selenium listener...
+20171003 155107.121 [6142] Establishing secure TLS connection to tunnel...
+20171003 155107.122 [6142] [EVDNS] Added nameserver 127.0.1.1:53 as 0x7f7b1c00d970
+20171003 155107.122 [6142] [EVDNS] Added nameserver 8.8.8.8:53 as 0x7f7b1c00dbb0
+20171003 155107.122 [6142] [EVDNS] Added nameserver 8.8.4.4:53 as 0x7f7b1c00ddf0
+20171003 155107.122 [6142] MAIN connecting to maki77036.miso.saucelabs.com:443
+20171003 155107.203 [6142] MAIN DNS error: non-recoverable failure in name resolution (-4)
+20171003 155107.203 [6142] MAIN DNS error: EVUTIL_EAI_FAIL
+20171003 155107.203 [6142] MAIN failed to connect KGP (socket error: socket error: Resource temporarily unavailable
+)
+20171003 155107.371 [6142] Selenium listener started on port 5757.
+20171003 155108.202 [6142] MAIN connecting to maki77036.miso.saucelabs.com:443
+20171003 155108.485 [6142] MAIN connecting to KGP server maki77036.miso.saucelabs.com took 282 ms
+20171003 155109.977 [6142] Sauce Connect is up, you may start your tests.
+20171003 155419.527 [6142] Got signal interrupt
+20171003 155419.557 [6142] Cleaning up.
+20171003 155419.557 [6142] Removing tunnel 5d7d322fe5bf4d08b0b94af91a1cacb8.
+20171003 155419.557 [6142] Waiting for any active jobs using this tunnel to finish.
+20171003 155419.557 [6142] Press CTRL-C again to shut down immediately.
+20171003 155419.557 [6142] Note: if you do this, tests that are still running will fail.
+20171003 155423.669 [6142] All jobs using the tunnel have finished.
+20171003 155423.669 [6142] Waiting for the connection to terminate...
+20171003 155423.669 [6142] SC Status: 1 after 1 tries
+20171003 155424.669 [6142] SC Status: 3 after 2 tries
+20171003 155424.669 [6142] Connection closed (8).
+20171003 155424.669 [6142] Goodbye.
+20171003 155509.594 [6334] Sauce Connect 4.4.9, build 3688 098cbcf -dirty
+20171003 155509.594 [6334] Using CA certificate bundle /etc/ssl/certs/ca-certificates.crt.
+20171003 155509.594 [6334] Using CA certificate verify path /etc/ssl/certs.
+20171003 155509.594 [6334] Trying to autodetect proxy settings
+20171003 155509.594 [6334] Starting up; pid 6334
+20171003 155509.594 [6334] Command line arguments: /home/vs/projects/todoAppTDD/node_modules/sauce-connect-launcher/sc/sc-4.4.9-linux/bin/sc -P 5757 --logfile sauce_connect.log -u YevheniiaMazur -k **** --tunnel-identifier karma1507035310 --readyfile /tmp/sc-launcher-readyfile 
+20171003 155509.594 [6334] Log file: sauce_connect.log
+20171003 155509.594 [6334] Pid file: /tmp/sc_client-karma1507035310.pid
+20171003 155509.594 [6334] Timezone: EEST GMT offset: 3h
+20171003 155509.594 [6334] Unable to serve metrics on localhost:8888, error was: listen tcp 127.0.0.1:8888: bind: address already in use
+20171003 155509.594 [6334] Using no proxy for connecting to Sauce Labs REST API.
+20171003 155513.645 [6334] PROXY *** scproxy started ***
+20171003 155513.645 [6334] PROXY found DNS server 127.0.1.1
+20171003 155513.646 [6334] PROXY found DNS server 8.8.8.8
+20171003 155513.646 [6334] PROXY found DNS server 8.8.4.4
+20171003 155513.695 [6334] Started scproxy on port 36125.
+20171003 155513.695 [6334] Please wait for 'you may start your tests' to start your tests.
+20171003 155534.178 [6334] Provisioned tunnel:1ead403bb8b345848b888c234672f3bc
+20171003 155534.178 [6334] Using no proxy for connecting to tunnel VM.
+20171003 155534.179 [6334] Starting Selenium listener...
+20171003 155534.179 [6334] Establishing secure TLS connection to tunnel...
+20171003 155534.179 [6334] [EVDNS] Added nameserver 127.0.1.1:53 as 0x7f88f800d5e0
+20171003 155534.179 [6334] [EVDNS] Added nameserver 8.8.8.8:53 as 0x7f88f800d820
+20171003 155534.179 [6334] [EVDNS] Added nameserver 8.8.4.4:53 as 0x7f88f800da60
+20171003 155534.180 [6334] MAIN connecting to maki83103.miso.saucelabs.com:443
+20171003 155534.255 [6334] MAIN DNS error: non-recoverable failure in name resolution (-4)
+20171003 155534.256 [6334] MAIN DNS error: EVUTIL_EAI_FAIL
+20171003 155534.256 [6334] MAIN failed to connect KGP (socket error: socket error: Resource temporarily unavailable
+)
+20171003 155534.429 [6334] Selenium listener started on port 5757.
+20171003 155535.261 [6334] MAIN connecting to maki83103.miso.saucelabs.com:443
+20171003 155535.549 [6334] MAIN connecting to KGP server maki83103.miso.saucelabs.com took 288 ms
+20171003 155537.034 [6334] Sauce Connect is up, you may start your tests.
+20171003 160112.985 [6334] MAIN connecting to maki83103.miso.saucelabs.com:443
+20171003 160113.290 [6334] MAIN connecting to KGP server maki83103.miso.saucelabs.com took 2696 ms
+20171003 160114.626 [6334] MAIN connecting to maki83103.miso.saucelabs.com:443
+20171003 160114.701 [6334] MAIN DNS error: non-recoverable failure in name resolution (-4)
+20171003 160114.701 [6334] MAIN DNS error: EVUTIL_EAI_FAIL
+20171003 160114.702 [6334] MAIN failed to connect KGP (socket error: socket error: Resource temporarily unavailable
+)
+20171003 160115.110 [6334] Remote tunnel VM has been terminated by user request. Shutting down.
+20171003 160115.110 [6334] Cleaning up.
+20171003 160115.110 [6334] Removing tunnel 1ead403bb8b345848b888c234672f3bc.
+20171003 160115.110 [6334] Waiting for any active jobs using this tunnel to finish.
+20171003 160115.110 [6334] Press CTRL-C again to shut down immediately.
+20171003 160115.110 [6334] Note: if you do this, tests that are still running will fail.
+20171003 160116.653 [6334] All jobs using the tunnel have finished.
+20171003 160116.653 [6334] Waiting for the connection to terminate...
+20171003 160116.653 [6334] SC Status: 1 after 1 tries
+20171003 160117.653 [6334] SC Status: 3 after 2 tries
+20171003 160117.653 [6334] Connection closed (8).
+20171003 160117.653 [6334] Goodbye.
+20171003 162147.748 [7550] Sauce Connect 4.4.9, build 3688 098cbcf -dirty
+20171003 162147.748 [7550] Using CA certificate bundle /etc/ssl/certs/ca-certificates.crt.
+20171003 162147.748 [7550] Using CA certificate verify path /etc/ssl/certs.
+20171003 162147.748 [7550] Trying to autodetect proxy settings
+20171003 162147.748 [7550] Starting up; pid 7550
+20171003 162147.748 [7550] Command line arguments: /home/vs/projects/todoAppTDD/node_modules/sauce-connect-launcher/sc/sc-4.4.9-linux/bin/sc -P 5757 --logfile sauce_connect.log -u YevheniiaMazur -k **** --tunnel-identifier karma1507036650 --readyfile /tmp/sc-launcher-readyfile 
+20171003 162147.748 [7550] Log file: sauce_connect.log
+20171003 162147.748 [7550] Pid file: /tmp/sc_client-karma1507036650.pid
+20171003 162147.748 [7550] Timezone: EEST GMT offset: 3h
+20171003 162147.748 [7550] Unable to serve metrics on localhost:8888, error was: listen tcp 127.0.0.1:8888: bind: address already in use
+20171003 162147.748 [7550] Using no proxy for connecting to Sauce Labs REST API.
+20171003 162152.544 [7550] PROXY *** scproxy started ***
+20171003 162152.545 [7550] PROXY found DNS server 127.0.1.1
+20171003 162152.545 [7550] PROXY found DNS server 8.8.8.8
+20171003 162152.545 [7550] PROXY found DNS server 8.8.4.4
+20171003 162152.594 [7550] Started scproxy on port 37358.
+20171003 162152.594 [7550] Please wait for 'you may start your tests' to start your tests.
+20171003 162204.325 [7550] Provisioned tunnel:4b268ccb370c46cc9befe9bc6cccc33b
+20171003 162204.325 [7550] Using no proxy for connecting to tunnel VM.
+20171003 162204.326 [7550] Starting Selenium listener...
+20171003 162204.326 [7550] Establishing secure TLS connection to tunnel...
+20171003 162204.326 [7550] [EVDNS] Added nameserver 127.0.1.1:53 as 0x7f20c400d480
+20171003 162204.326 [7550] [EVDNS] Added nameserver 8.8.8.8:53 as 0x7f20c400d6c0
+20171003 162204.326 [7550] [EVDNS] Added nameserver 8.8.4.4:53 as 0x7f20c400d900
+20171003 162204.327 [7550] MAIN connecting to maki79111.miso.saucelabs.com:443
+20171003 162204.400 [7550] MAIN DNS error: non-recoverable failure in name resolution (-4)
+20171003 162204.400 [7550] MAIN DNS error: EVUTIL_EAI_FAIL
+20171003 162204.400 [7550] MAIN failed to connect KGP (socket error: socket error: Resource temporarily unavailable
+)
+20171003 162204.576 [7550] Selenium listener started on port 5757.
+20171003 162205.405 [7550] MAIN connecting to maki79111.miso.saucelabs.com:443
+20171003 162205.705 [7550] MAIN connecting to KGP server maki79111.miso.saucelabs.com took 299 ms
+20171003 162207.181 [7550] Sauce Connect is up, you may start your tests.
+20171003 162335.281 [7550] Remote tunnel VM has been terminated by user request. Shutting down.
+20171003 162335.281 [7550] Cleaning up.
+20171003 162335.282 [7550] Removing tunnel 4b268ccb370c46cc9befe9bc6cccc33b.
+20171003 162335.282 [7550] Waiting for any active jobs using this tunnel to finish.
+20171003 162335.282 [7550] Press CTRL-C again to shut down immediately.
+20171003 162335.282 [7550] Note: if you do this, tests that are still running will fail.
+20171003 162336.942 [7550] All jobs using the tunnel have finished.
+20171003 162336.942 [7550] Waiting for the connection to terminate...
+20171003 162336.942 [7550] SC Status: 1 after 1 tries
+20171003 162337.942 [7550] SC Status: 3 after 2 tries
+20171003 162337.942 [7550] Connection closed (8).
+20171003 162337.942 [7550] Goodbye.
